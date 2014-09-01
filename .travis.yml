@@ -5,4 +5,7 @@ rvm:
   - 1.9.3
 before_install:
   - sudo apt-get install -y libicu-dev
+install:
+  - travis_retry bundle config build.nokogiri --use-system-libraries
+  - travis_retry bundle install
 script: rake test
